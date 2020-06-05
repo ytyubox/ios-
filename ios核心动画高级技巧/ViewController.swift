@@ -10,9 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        layerView.center = view.center
+    }
+    let layerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.addSubview(layerView)
+        view.backgroundColor = .gray
+        layerView.center = view.center
+        layerView.backgroundColor = .white
     }
 
 
