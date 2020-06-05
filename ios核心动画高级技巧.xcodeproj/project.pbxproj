@@ -13,6 +13,7 @@
 		A718E8F2248A429F00C51408 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A718E8F0248A429F00C51408 /* Main.storyboard */; };
 		A718E8F4248A42A000C51408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A718E8F3248A42A000C51408 /* Assets.xcassets */; };
 		A718E8F7248A42A000C51408 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A718E8F5248A42A000C51408 /* LaunchScreen.storyboard */; };
+		A7F16744248A461C00587245 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F16743248A461B00587245 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A718E8F6248A42A000C51408 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A718E8F8248A42A000C51408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A718E8FE248A42FC00C51408 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A7F16743248A461B00587245 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7F16744248A461C00587245 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 				A718E8FE248A42FC00C51408 /* README.md */,
 				A718E8E9248A429F00C51408 /* ios核心动画高级技巧 */,
 				A718E8E8248A429F00C51408 /* Products */,
+				A7F16742248A461B00587245 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +71,14 @@
 				A718E8F8248A42A000C51408 /* Info.plist */,
 			);
 			path = "ios核心动画高级技巧";
+			sourceTree = "<group>";
+		};
+		A7F16742248A461B00587245 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7F16743248A461B00587245 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

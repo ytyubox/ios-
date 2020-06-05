@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController {
 
@@ -21,6 +22,10 @@ class ViewController: UIViewController {
         view.backgroundColor = .gray
         layerView.center = view.center
         layerView.backgroundColor = .white
+        let blueLayer = CALayer()
+        blueLayer.frame = CGRect(x: 50, y: 50, width: 100, height: 100)
+        blueLayer.backgroundColor = UIColor.blue.cgColor
+        layerView.layer.addSublayer(blueLayer)
     }
 
 
