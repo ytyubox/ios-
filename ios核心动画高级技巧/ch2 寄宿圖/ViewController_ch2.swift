@@ -85,10 +85,10 @@ class ViewController_ch2: UIViewController {
         layerView.layer.masksToBounds = true
     }
     
-    private let  coneView   = UIView(frame: CGRect(x: 0, y: 100, width: 50, height: 50))
-    private let  shipView   = UIView(frame: CGRect(x: 50, y: 160, width: 50, height: 50))
-    private let  iglooView  = UIView(frame: CGRect(x: 60, y: 100, width: 50, height: 50))
-    private let  anchorView = UIView(frame: CGRect(x: 600, y: 160, width: 50, height: 50))
+    private let  coneView   = UIView(frame: CGRect(x: 10, y: 200, width: 100, height: 100))
+    private let  shipView   = UIView(frame: CGRect(x: 150, y: 200, width: 100, height: 100))
+    private let  iglooView  = UIView(frame: CGRect(x: 10, y: 300, width: 100, height: 100))
+    private let  anchorView = UIView(frame: CGRect(x: 150, y: 300, width: 100, height: 100))
     
     private func setIndexTo6() {
         func addSpriteImage( _ image:UIImage, rect:CGRect,  layer:CALayer)
