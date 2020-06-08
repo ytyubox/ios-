@@ -15,15 +15,17 @@ class ViewController_ch2: UIViewController {
     }
     var layerView = makeNewlayer()
     private func resetLayer() {
+        if coneView.superview != nil { coneView.removeFromSuperview() }
+        if shipView.superview != nil { shipView.removeFromSuperview()}
+        if iglooView.superview != nil { iglooView.removeFromSuperview()}
+        if anchorView.superview != nil { anchorView.removeFromSuperview()}
         layerView.removeFromSuperview()
         layerView = Self.makeNewlayer()
         view.addSubview(layerView)
         layerView.center = view.center
         layerView.backgroundColor = .lightGray
     }
-    lazy var segmentedControl = UISegmentedControl(items:
-        works.map(\.0)
-    )
+    lazy var segmentedControl = UISegmentedControl(items:works.map(\.0))
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(layerView)
@@ -82,16 +84,46 @@ class ViewController_ch2: UIViewController {
         layerView.layer.contentsScale = image.scale
         layerView.layer.masksToBounds = true
     }
+    
+    private let  coneView   = UIView(frame: CGRect(x: 0, y: 100, width: 50, height: 50))
+    private let  shipView   = UIView(frame: CGRect(x: 50, y: 160, width: 50, height: 50))
+    private let  iglooView  = UIView(frame: CGRect(x: 60, y: 100, width: 50, height: 50))
+    private let  anchorView = UIView(frame: CGRect(x: 600, y: 160, width: 50, height: 50))
+    
     private func setIndexTo6() {
+        func addSpriteImage( _ image:UIImage, rect:CGRect,  layer:CALayer)
+        {
+            layer.contents = image.cgImage
+            
+            //scale contents to fit
+            layer.contentsGravity = .resizeAspect
+            
+            //set contentsRect
+            layer.contentsRect = rect
+        }
         resetLayer()
-        layerView.layer.contents = image.cgImage
-        layerView.layer.contentsGravity = .resizeAspect
-        layerView.layer.masksToBounds = true
-        layerView.layer.contentsRect = CGRect(
-            x: 0,
-            y: 0,
-            width: 0.5,
-            height: 0.5)
+        layerView.removeFromSuperview()
+        view.addSubview(coneView)
+        view.addSubview(shipView)
+        view.addSubview(iglooView)
+        view.addSubview(anchorView)
+        
+        addSpriteImage(image拼合后的图表,
+                       rect: CGRect(x: 0, y: 0, width: 0.5, height: 0.5),
+                       layer: iglooView.layer)
+        //set cone sprite
+        addSpriteImage(image拼合后的图表,
+                       rect: CGRect(x: 0.5, y: 0, width: 0.5, height: 0.5),
+                       layer: coneView.layer)
+        //set anchor sprite
+        addSpriteImage(image拼合后的图表,
+                       rect: CGRect(x: 0, y: 0.5, width: 0.5, height: 0.5),
+                       layer: anchorView.layer)
+        //set spaceship sprite
+        addSpriteImage(image拼合后的图表,
+                       rect: CGRect(x: 0.5, y: 0.5, width: 0.5, height: 0.5),
+                       layer: shipView.layer)
+        
     }
 }
 
