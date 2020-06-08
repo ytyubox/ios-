@@ -15,6 +15,7 @@
 		A718E8F7248A42A000C51408 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A718E8F5248A42A000C51408 /* LaunchScreen.storyboard */; };
 		A7F16744248A461C00587245 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F16743248A461B00587245 /* QuartzCore.framework */; };
 		A7F1674B248A4B9400587245 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1674A248A4B9400587245 /* TableViewController.swift */; };
+		A7F1674D248A4D0E00587245 /* ViewController_ch2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1674C248A4D0E00587245 /* ViewController_ch2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		A718E8FE248A42FC00C51408 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A7F16743248A461B00587245 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A7F1674A248A4B9400587245 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A7F1674C248A4D0E00587245 /* ViewController_ch2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_ch2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		A7F16747248A4AA300587245 /* ch2 寄宿圖 */ = {
 			isa = PBXGroup;
 			children = (
+				A7F1674C248A4D0E00587245 /* ViewController_ch2.swift */,
 			);
 			path = "ch2 寄宿圖";
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			files = (
 				A718E8EF248A429F00C51408 /* ViewController_ch1.swift in Sources */,
 				A718E8EB248A429F00C51408 /* AppDelegate.swift in Sources */,
+				A7F1674D248A4D0E00587245 /* ViewController_ch2.swift in Sources */,
 				A718E8ED248A429F00C51408 /* SceneDelegate.swift in Sources */,
 				A7F1674B248A4B9400587245 /* TableViewController.swift in Sources */,
 			);
