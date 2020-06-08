@@ -13,13 +13,13 @@ class ViewController_ch2: UIViewController {
     private static func makeNewlayer() -> UIView{
         UIView(frame: frame)
     }
-    var layerView = makeNewlayer(){
-        didSet {
-            oldValue.removeFromSuperview()
-            view.addSubview(layerView)
-            layerView.center = view.center
-            layerView.backgroundColor = .lightGray
-        }
+    var layerView = makeNewlayer()
+    private func resetLayer() {
+        layerView.removeFromSuperview()
+        layerView = Self.makeNewlayer()
+        view.addSubview(layerView)
+        layerView.center = view.center
+        layerView.backgroundColor = .lightGray
     }
     lazy var segmentedControl = UISegmentedControl(items:
         works.map(\.0)
@@ -55,35 +55,35 @@ class ViewController_ch2: UIViewController {
         ]
     }
     private func setIndexTo1() {
-        layerView = Self.makeNewlayer()
+        resetLayer()
         layerView.layer.contents = image.cgImage
     }
     private func setIndexTo2() {
-        layerView = Self.makeNewlayer()
+        resetLayer()
         layerView.layer.contents = image.cgImage
         layerView.contentMode = .scaleAspectFit
     }
     private func setIndexTo3() {
-        layerView = Self.makeNewlayer()
+        resetLayer()
         layerView.layer.contents = image.cgImage
         layerView.layer.contentsGravity = .resizeAspect
     }
     private func setIndexTo4() {
-        layerView = Self.makeNewlayer()
+        resetLayer()
         layerView.layer.contents = image.cgImage
         layerView.layer.contentsGravity = .center
         layerView.layer.contentsScale = image.scale
         // reminder: 教學上的雪人的背景是透明的，但是我們的不是，所以會看起來變大
     }
     private func setIndexTo5() {
-        layerView = Self.makeNewlayer()
+        resetLayer()
         layerView.layer.contents = image.cgImage
         layerView.layer.contentsGravity = .center
         layerView.layer.contentsScale = image.scale
         layerView.layer.masksToBounds = true
     }
     private func setIndexTo6() {
-        layerView = Self.makeNewlayer()
+        resetLayer()
         layerView.layer.contents = image.cgImage
         layerView.layer.contentsGravity = .resizeAspect
         layerView.layer.masksToBounds = true
@@ -98,3 +98,4 @@ class ViewController_ch2: UIViewController {
 
 
 private let image = UIImage(named: "snowman")!
+private let image拼合后的图表 = UIImage(named: "拼合后的图表")!
