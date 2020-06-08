@@ -18,7 +18,7 @@ class ViewController_ch2: UIViewController {
             oldValue.removeFromSuperview()
             view.addSubview(layerView)
             layerView.center = view.center
-            layerView.backgroundColor = .white
+            layerView.backgroundColor = .lightGray
         }
     }
     lazy var segmentedControl = UISegmentedControl(items:
@@ -46,26 +46,43 @@ class ViewController_ch2: UIViewController {
     
     typealias Pair = (String,()->Void)
     private var works:[Pair] { [
-        ("1",setIndexTo0),
-        ("2",setIndexTo1),
-        ("3",setIndexTo2),
+        ("1",setIndexTo1),
+        ("2",setIndexTo2),
+        ("3",setIndexTo3),
+        ("4",setIndexTo4),
+        ("5",setIndexTo5),
         ]
-    }
-    private func setIndexTo0() {
-        layerView = Self.makeNewlayer()
-      layerView.layer.contents = UIImage(named: "snowman")?.cgImage
     }
     private func setIndexTo1() {
         layerView = Self.makeNewlayer()
-        layerView.layer.contents = UIImage(named: "snowman")?.cgImage
-        layerView.contentMode = .scaleAspectFit
+      layerView.layer.contents = image.cgImage
     }
     private func setIndexTo2() {
         layerView = Self.makeNewlayer()
-        layerView.layer.contents = UIImage(named: "snowman")?.cgImage
+        layerView.layer.contents = image.cgImage
+        layerView.contentMode = .scaleAspectFit
+    }
+    private func setIndexTo3() {
+        layerView = Self.makeNewlayer()
+        layerView.layer.contents = image.cgImage
         layerView.layer.contentsGravity = .resizeAspect
+    }
+    private func setIndexTo4() {
+        layerView = Self.makeNewlayer()
+        layerView.layer.contents = image.cgImage
+        layerView.layer.contentsGravity = .center
+        layerView.layer.contentsScale = image.scale
+        // reminder: 教學上的雪人的背景是透明的，但是我們的不是，所以會看起來變大
+    }
+    private func setIndexTo5() {
+        layerView = Self.makeNewlayer()
+        layerView.layer.contents = image.cgImage
+        layerView.layer.contentsGravity = .center
+        layerView.layer.contentsScale = image.scale
+        layerView.layer.masksToBounds = true
     }
 }
 
 
 
+private let image = UIImage(named: "snowman")!
