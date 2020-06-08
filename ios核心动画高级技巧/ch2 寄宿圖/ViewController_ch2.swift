@@ -7,11 +7,11 @@
 //
 
 import UIKit
-let frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+private let frame = CGRect(x: 0, y: 0, width: 200, height: 200)
 
 class ViewController_ch2: UIViewController {
-    static func makeNewlayer() -> UIView{
-         UIView(frame: frame)
+    private static func makeNewlayer() -> UIView{
+        UIView(frame: frame)
     }
     var layerView = makeNewlayer(){
         didSet {
@@ -46,16 +46,17 @@ class ViewController_ch2: UIViewController {
     
     typealias Pair = (String,()->Void)
     private var works:[Pair] { [
-        ("1",setIndexTo1),
-        ("2",setIndexTo2),
-        ("3",setIndexTo3),
-        ("4",setIndexTo4),
-        ("5",setIndexTo5),
+        ("1", setIndexTo1),
+        ("2", setIndexTo2),
+        ("3", setIndexTo3),
+        ("4", setIndexTo4),
+        ("5", setIndexTo5),
+        ("6", setIndexTo6),
         ]
     }
     private func setIndexTo1() {
         layerView = Self.makeNewlayer()
-      layerView.layer.contents = image.cgImage
+        layerView.layer.contents = image.cgImage
     }
     private func setIndexTo2() {
         layerView = Self.makeNewlayer()
@@ -80,6 +81,17 @@ class ViewController_ch2: UIViewController {
         layerView.layer.contentsGravity = .center
         layerView.layer.contentsScale = image.scale
         layerView.layer.masksToBounds = true
+    }
+    private func setIndexTo6() {
+        layerView = Self.makeNewlayer()
+        layerView.layer.contents = image.cgImage
+        layerView.layer.contentsGravity = .resizeAspect
+        layerView.layer.masksToBounds = true
+        layerView.layer.contentsRect = CGRect(
+            x: 0,
+            y: 0,
+            width: 0.5,
+            height: 0.5)
     }
 }
 
