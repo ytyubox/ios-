@@ -15,7 +15,7 @@ class ViewController_ch2: UIViewController {
     }
     var layerView = makeNewlayer()
     private func resetLayer() {
-        coneView.removeFromSuperview() 
+        coneView.removeFromSuperview()
         shipView.removeFromSuperview()
         iglooView.removeFromSuperview()
         anchorView.removeFromSuperview()
@@ -54,6 +54,8 @@ class ViewController_ch2: UIViewController {
         ("4", setIndexTo4),
         ("5", setIndexTo5),
         ("6", setIndexTo6),
+        ("7", setIndexTo7),
+        ("8", setIndexTo8),
         ]
     }
     private func setIndexTo1() {
@@ -125,6 +127,42 @@ class ViewController_ch2: UIViewController {
                        layer: shipView.layer)
         
     }
+    private func setIndexTo7() {
+        resetLayer()
+        func addStretchableImage(
+            image:UIImage,
+            withContentCenter rect:CGRect,
+            toLayer layer:CALayer )
+        {
+            //set image
+            layer.contents = image.cgImage
+            
+            //set contentsCenter
+            layer.contentsCenter = rect;
+        }
+        addStretchableImage(
+            image: contentsCenterImage,
+            withContentCenter:CGRect(x: 0.25, y: 0.25, width: 0.25, height: 0.5),
+            toLayer:self.layerView.layer)
+    }
+    private func setIndexTo8() {
+           resetLayer()
+           func addStretchableImage(
+               image:UIImage,
+               withContentCenter rect:CGRect,
+               toLayer layer:CALayer )
+           {
+               //set image
+               layer.contents = image.cgImage
+               
+               //set contentsCenter
+               layer.contentsCenter = rect;
+           }
+           addStretchableImage(
+               image: contentsCenterImage,
+               withContentCenter:CGRect(x: 0.75, y: 0.25, width: 1, height: 0.5),
+               toLayer:self.layerView.layer)
+       }
 }
 
 
