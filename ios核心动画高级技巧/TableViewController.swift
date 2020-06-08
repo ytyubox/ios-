@@ -10,7 +10,8 @@ import UIKit
 class TableViewController:UITableViewController {
     
     let chapters:[UIViewController]  = [
-        ViewController_ch1()
+        ViewController_ch1(),
+        ViewController_ch2(),
     ]
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
