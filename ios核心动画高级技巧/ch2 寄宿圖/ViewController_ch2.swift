@@ -15,10 +15,10 @@ class ViewController_ch2: UIViewController {
     }
     var layerView = makeNewlayer()
     private func resetLayer() {
-        if coneView.superview != nil { coneView.removeFromSuperview() }
-        if shipView.superview != nil { shipView.removeFromSuperview()}
-        if iglooView.superview != nil { iglooView.removeFromSuperview()}
-        if anchorView.superview != nil { anchorView.removeFromSuperview()}
+        coneView.removeFromSuperview() 
+        shipView.removeFromSuperview()
+        iglooView.removeFromSuperview()
+        anchorView.removeFromSuperview()
         layerView.removeFromSuperview()
         layerView = Self.makeNewlayer()
         view.addSubview(layerView)
@@ -131,3 +131,4 @@ class ViewController_ch2: UIViewController {
 
 private let image = UIImage(named: "snowman")!
 private let image拼合后的图表 = UIImage(named: "拼合后的图表")!
+private let contentsCenterImage = UIImage(named: "contentsCenter")!
