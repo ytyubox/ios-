@@ -45,3 +45,27 @@ private func setIndexTo1() {
        layerView.layer.contents = image.cgImage
    }
 ```
+在imageView.layer.contents的屬性是id, 所以即使把 ``` image.cgImage```寫成image也不會報錯。因為contents可以接受任何的賦值，但是若不是```.cgImage```屬性的話，在實例上，將會是空白畫面。
+
+```swift
+       layerView.contentMode = .scaleAspectFit
+```
+```swift
+layerView.layer.contentsGravity = .resizeAspect
+```
+
+這邊的```layerView.contentMode```是調整layerView圖片的延展方式。```.scaleAspectFit```是讓圖片在“維持等比例”的情形下，延展至其極限。
+```layerView.layer.contentsGravity``` 的default value是 ```.resizeAspect```，根據Apple官方文件，其效果就如同```layerView.contentMode```的```.scaleAspectFit```。
+
+```swift
+layerView.layer.contentsGravity = .center
+```
+
+這邊```layerView.layer.contentsGravity = .center```的center不是我們想的center，而是設定圖層比例的一種方式，實際上就是調整圖層的```CGRect```，default value是```(x: 0, y: 0) , (width: 1.0, height: 1.0)```，其x與 y和寬與高代表應該是圖層和其superView的相對比例，而非實際位置。
+
+ 參照Apple 官方文件：https://developer.apple.com/documentation/quartzcore/calayer/1410740-contentscenter
+
+```swift
+layerView.layer.masksToBounds = true
+```
+```masksToBounds``` 的default value為false(即為UIView還是會顯示超過邊界的任何子圖層)，但是當設定為true的時候，UIView會選擇不顯示其邊界外的任何圖層。
