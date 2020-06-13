@@ -68,4 +68,12 @@ layerView.layer.contentsGravity = .center
 ```swift
 layerView.layer.masksToBounds = true
 ```
-```masksToBounds``` 的default value為false(即為UIView還是會顯示超過邊界的任何子圖層)，但是當設定為true的時候，UIView會選擇不顯示其邊界外的任何圖層。
+```masksToBounds``` 的default value為false
+(即為UIView還是會顯示超過邊界的任何子圖層)，但是當設定為true的時候，UIView會選擇不顯示其邊界外的任何圖層。
+
+``` swift
+layer.contentsRect = rect
+```
+
+layer.contentsRect不是按照點來計算，而是按照相對值來計算(整張圖片圖片是1，然後用比例0.3、0.5去決定顯示的區域)。 舉例來說： ```layer.contentsRect = CGRect(x: 0.3, y: 0.7, width: 0.5, height: 0.5)``` ，而假設layer實際大小是```400 x 400 的圖層```。 實際的呈現起來會像是Corp原圖層```CGRect(x: 120, y: 280, width: 200, height: 200```的樣子。 
+
